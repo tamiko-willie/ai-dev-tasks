@@ -84,6 +84,10 @@ You'll see a satisfying list of completed items grow, providing a clear visual o
 
 While it's not always perfect, this method has proven to be a very reliable way to build out larger features with AI assistance.
 
+### 6️⃣ Build Regression Tests from Logs
+
+After merging your changes, run `qa-regression-builder.mdc` to analyze recent logs or test reports. The command searches for repeated errors or anomalies and then suggests new regression tests, updates to your QA checklist, and optional tasks for unresolved issues.
+
 ## 🗂️ Files in this Repository
 
 *   **`create-prd.mdc`**: Guides the AI in generating a Product Requirement Document for your feature.
@@ -91,6 +95,7 @@ While it's not always perfect, this method has proven to be a very reliable way 
 *   **`process-task-list.mdc`**: Instructs the AI on how to process the generated task list, tackling one task at a time and waiting for your approval before proceeding. (This file also contains logic for the AI to mark tasks as complete).
 *   **`qa-regression-builder.mdc`**: After a merge, parse logs for repeated errors and suggest regression tests or new tasks.
 *   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
+main
 
 ## 🌟 Benefits
 
