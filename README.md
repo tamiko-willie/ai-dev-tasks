@@ -40,11 +40,11 @@ You can create a lightweight PRD directly within Cursor:
 
 With your PRD drafted (e.g., `MyFeature-PRD.md`), the next step is to generate a detailed, step-by-step implementation plan for your AI Developer.
 
-1.  Ensure you have `generate-tasks-from-prd.mdc` accessible.
+1.  Ensure you have `generate-tasks.mdc` accessible.
 2.  In Cursor's Agent chat, use the PRD to create tasks:
 
     ```
-    Now take @MyFeature-PRD.md and create tasks using @generate-tasks-from-prd.mdc
+    Now take @MyFeature-PRD.md and create tasks using @generate-tasks.mdc
     ```
     *(Note: Replace `@MyFeature-PRD.md` with the actual filename of the PRD you generated in step 1.)*
 
@@ -84,11 +84,16 @@ You'll see a satisfying list of completed items grow, providing a clear visual o
 
 While it's not always perfect, this method has proven to be a very reliable way to build out larger features with AI assistance.
 
+### 6️⃣ Build Regression Tests from Logs
+
+After merging your changes, run `qa-regression-builder.mdc` to analyze recent logs or test reports. The command searches for repeated errors or anomalies and then suggests new regression tests, updates to your QA checklist, and optional tasks for unresolved issues.
+
 ## 🗂️ Files in this Repository
 
 *   **`create-prd.mdc`**: Guides the AI in generating a Product Requirement Document for your feature.
-*   **`generate-tasks-from-prd.mdc`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
+*   **`generate-tasks.mdc`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
 *   **`process-task-list.mdc`**: Instructs the AI on how to process the generated task list, tackling one task at a time and waiting for your approval before proceeding. (This file also contains logic for the AI to mark tasks as complete).
+*   **`qa-regression-builder.mdc`**: After a merge, parse logs for repeated errors and suggest regression tests or new tasks.
 
 ## 🌟 Benefits
 
