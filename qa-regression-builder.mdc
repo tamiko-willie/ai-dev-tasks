@@ -1,0 +1,38 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# QA Regression Builder
+
+Guidance for analyzing logs after a merge to discover recurring issues and propose regression tests or follow-up tasks.
+
+## Goal
+
+Use Cursor to parse logs or test reports for repeated errors or anomalies and turn those findings into actionable QA items.
+
+## Process
+
+1. **Provide Log Sources:** The user supplies log files or links to CI reports.
+2. **Analyze for Patterns:** Scan the logs for repeated stack traces, error messages, or unusual failures.
+3. **Summarize Findings:** List each unique issue with a brief description.
+4. **Suggest Regression Tests:** For each issue, propose a regression test case and any necessary updates to the QA checklist.
+5. **Create Optional Tasks:** If problems remain unresolved, generate new tasks tagged `qa-regression` in the related task list.
+6. **Output Results:** Present a short report that includes proposed tests, checklist changes, and tasks.
+
+## Output Format
+
+```markdown
+### Regression Issues Found
+- *Error summary 1* — Suggested regression test or checklist update
+- *Error summary 2* — Suggested regression test or checklist update
+
+### Suggested Tasks
+- [ ] Investigate and fix *error summary 1*
+- [ ] Add regression test for *error summary 1*
+```
+
+## Target Audience
+
+QA engineers and developers looking to strengthen test coverage based on real-world failures.
+
