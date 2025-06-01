@@ -59,18 +59,23 @@ You'll now have a well-structured task list, often with tasks and sub-tasks, rea
 ### 4️⃣ Instruct the AI to Work Through Tasks (and Mark Completion)
 
 To ensure methodical progress and allow for verification, we'll use `process-task-list.mdc`. This command instructs the AI to focus on one task at a time and wait for your go-ahead before moving to the next.
+*   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
 
 1.  Create or ensure you have the `process-task-list.mdc` file accessible.
+*   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
 2.  In Cursor's Agent chat, tell the AI to start with the first task (e.g., `1.1`):
 
     ```
     Please start on task 1.1 and use @process-task-list.mdc
+*   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
     ```
     *(Important: You only need to reference `@process-task-list.mdc` for the *first* task. The instructions within it guide the AI for subsequent tasks.)*
+*   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
 
     The AI will attempt the task and then prompt you to review.
 
     ![Example of starting on a task with process-task-list.mdc](https://pbs.twimg.com/media/Go6I41KWcAAAlHc?format=jpg&name=medium)
+*   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
 
 ### 5️⃣ Review, Approve, and Progress ✅
 
@@ -93,9 +98,10 @@ After merging your changes, run `qa-regression-builder.mdc` to analyze recent lo
 *   **`create-prd.mdc`**: Guides the AI in generating a Product Requirement Document for your feature.
 *   **`generate-tasks.mdc`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
 *   **`process-task-list.mdc`**: Instructs the AI on how to process the generated task list, tackling one task at a time and waiting for your approval before proceeding. (This file also contains logic for the AI to mark tasks as complete).
-*   **`qa-regression-builder.mdc`**: After a merge, parse logs for repeated errors and suggest regression tests or new tasks.
+ codex/auto-generate-qa-summary.md-per-feature/pr
 *   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
-main
+*   **`qa-regression-builder.mdc`**: After a merge, parse logs for repeated errors and suggest regression tests or new tasks.
+ main
 
 ## 🌟 Benefits
 
@@ -122,6 +128,9 @@ main
 ## QA Report Generation & Traceability
 
 Use `scripts/generate_qa_summary.py` to produce a `qa-summary.md` for each PR. Provide the task list file, QA reviewer names, test coverage results, bug information, and CI/CD log URL. Commit the generated summary for audit purposes.
+codex/auto-generate-qa-summary.md-per-feature/pr
+
+
 ```bash
 python3 scripts/generate_qa_summary.py --tasks-file tasks-example.md 
     --qa-reviewers "Alice,Bob" --test-coverage coverage.txt 
@@ -140,6 +149,8 @@ For projects requiring deeper upfront analysis, consult the **[Advanced Business
 3. Break down the chosen option into a detailed design document for user review and approval.
 4. Embed QA activities in every step to achieve full functional test coverage.
 
+main
+
 ## 🤝 Contributing
 
 Got ideas to improve these `.mdc` files or have new ones that fit this workflow? Contributions are welcome!
@@ -147,6 +158,6 @@ Please feel free to:
 *   Open an issue to discuss changes or suggest new features.
 *   Submit a pull request with your enhancements.
 
----
+
 
 Happy AI-assisted developing!
