@@ -29,9 +29,11 @@ def parse_tasks(path: Path):
     pattern = re.compile(r"^\s*- \[( |x)\] \d+\.\d+ (.+)")
     with path.open() as f:
         for line in f:
+
             lower = line.strip().lower()
             if lower.startswith("## tasks"):
                 in_tasks = True
+main
                 continue
             if in_tasks:
                 if line.strip().startswith("##") and not lower.startswith("## tasks"):
@@ -51,7 +53,7 @@ def read_text(path: Path):
 
 
 def generate_summary(args):
-main
+
     tasks = parse_tasks(args.tasks_file) if args.tasks_file else []
     coverage = read_text(args.test_coverage)
     bugs = read_text(args.bugs_fixed)
@@ -86,12 +88,14 @@ main
         lines.append("")
 
 
+
     Path(args.output).write_text("\n".join(lines))
  main
 
 
 def main():
     parser = argparse.ArgumentParser(description="Generate qa-summary.md for compliance audits")
+
     parser.add_argument("--tasks-file", type=Path, help="Path to tasks markdown file")
     parser.add_argument("--qa-reviewers", help="Comma-separated list of QA reviewer names")
     parser.add_argument("--test-coverage", type=Path, help="Path to test coverage results file")
@@ -99,6 +103,7 @@ def main():
     parser.add_argument("--cicd-log-url", help="Link to CI/CD logs")
     parser.add_argument("--output", default="qa-summary.md", help="Output markdown file")
  main
+
     args = parser.parse_args()
     generate_summary(args)
 
