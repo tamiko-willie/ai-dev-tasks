@@ -31,6 +31,9 @@ The AI should adapt its questions based on the prompt, but here are some common 
 *   **QA Acceptance Criteria:** "What QA acceptance criteria must this feature satisfy?"
 *   **Non‑Negotiable QA Commandments:** "Are there any absolute quality rules that cannot be compromised?"
 *   **Edge Case Enumeration:** "Can you list potential edge cases or error conditions we should test for?"
+ codex/update-prd-with-qa-sections-and-checklist
+*   **Security Considerations:** "Are there specific security requirements like rate limiting or file validation we must enforce?"
+ main
 
 ## PRD Structure
 
@@ -45,10 +48,13 @@ The generated PRD should include the following sections:
 7.  **Non‑Negotiable QA Commandments:** Bullet list of absolute quality rules that cannot be broken.
 8.  **Edge Case Enumeration:** List potential edge cases to test.
 9.  **Quality Assurance Plan:** Link to `QA_WORKFLOW.md` for the detailed QA process.
-10. **Design Considerations (Optional):** Link to mockups, describe UI/UX requirements, or mention relevant components/styles if applicable.
-11. **Technical Considerations (Optional):** Mention any known technical constraints, dependencies, or suggestions (e.g., "Should integrate with the existing Auth module").
-12. **Success Metrics:** How will the success of this feature be measured? (e.g., "Increase user engagement by 10%", "Reduce support tickets related to X").
-13. **Open Questions:** List any remaining questions or areas needing further clarification.
+ codex/update-prd-with-qa-sections-and-checklist
+10. **Security Considerations:** Bullet list security requirements like rate limiting, invalid input handling, and file validation.
+11. **Design Considerations (Optional):** Link to mockups, describe UI/UX requirements, or mention relevant components/styles if applicable.
+12. **Technical Considerations (Optional):** Mention any known technical constraints, dependencies, or suggestions (e.g., "Should integrate with the existing Auth module").
+13. **Success Metrics:** How will the success of this feature be measured? (e.g., "Increase user engagement by 10%", "Reduce support tickets related to X").
+14. **Open Questions:** List any remaining questions or areas needing further clarification.
+
 
 ## Target Audience
 
@@ -65,4 +71,5 @@ Assume the primary reader of the PRD is a **junior developer**. Therefore, requi
 1. Do NOT start implementing the PRD
 2. Make sure to ask the user clarifying questions
 3. Take the user's answers to the clarifying questions and improve the PRD
-4. **Do not proceed to generate tasks until the QA sections are clearly defined.**
+4. Do not proceed to generate tasks until the QA and security sections are clearly defined.
+main
