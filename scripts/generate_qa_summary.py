@@ -33,7 +33,6 @@ def parse_tasks(path: Path):
             lower = line.strip().lower()
             if lower.startswith("## tasks"):
                 in_tasks = True
-main
                 continue
             if in_tasks:
                 if line.strip().startswith("##") and not lower.startswith("## tasks"):
@@ -90,7 +89,6 @@ def generate_summary(args):
 
 
     Path(args.output).write_text("\n".join(lines))
- main
 
 
 def main():
@@ -102,7 +100,6 @@ def main():
     parser.add_argument("--bugs-fixed", type=Path, help="Path to bugs found/fixed file")
     parser.add_argument("--cicd-log-url", help="Link to CI/CD logs")
     parser.add_argument("--output", default="qa-summary.md", help="Output markdown file")
- main
 
     args = parser.parse_args()
     generate_summary(args)
