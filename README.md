@@ -59,23 +59,18 @@ You'll now have a well-structured task list, often with tasks and sub-tasks, rea
 ### 4️⃣ Instruct the AI to Work Through Tasks (and Mark Completion)
 
 To ensure methodical progress and allow for verification, we'll use `process-task-list.mdc`. This command instructs the AI to focus on one task at a time and wait for your go-ahead before moving to the next.
-*   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
 
 1.  Create or ensure you have the `process-task-list.mdc` file accessible.
-*   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
 2.  In Cursor's Agent chat, tell the AI to start with the first task (e.g., `1.1`):
 
     ```
     Please start on task 1.1 and use @process-task-list.mdc
-*   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
     ```
     *(Important: You only need to reference `@process-task-list.mdc` for the *first* task. The instructions within it guide the AI for subsequent tasks.)*
-*   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
 
     The AI will attempt the task and then prompt you to review.
 
     ![Example of starting on a task with process-task-list.mdc](https://pbs.twimg.com/media/Go6I41KWcAAAlHc?format=jpg&name=medium)
-*   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
 
 ### 5️⃣ Review, Approve, and Progress ✅
 
@@ -101,7 +96,6 @@ After merging your changes, run `qa-regression-builder.mdc` to analyze recent lo
 *   **`generate-tasks.mdc`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list with embedded QA and security subtasks.
 *   **`process-task-list.mdc`**: Instructs the AI on how to process the generated task list, tackling one task at a time and waiting for your approval before proceeding. This file also checks for QA sign-off and passing security scans before closing tasks.
 *   **`generate-qa-checklist.mdc`**: Builds a feature-specific QA checklist covering accessibility, security scans, and coverage requirements.
-*   **`qa-regression-builder.mdc`**: After a merge, parse logs for repeated errors and suggest regression tests or new tasks.
 *   **`qa-regression-builder.mdc`**: After a merge, parse logs for repeated errors and suggest regression tests or new tasks.
 *   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
 
