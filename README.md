@@ -40,11 +40,11 @@ You can create a lightweight PRD directly within Cursor:
 
 With your PRD drafted (e.g., `MyFeature-PRD.md`), the next step is to generate a detailed, step-by-step implementation plan for your AI Developer.
 
-1.  Ensure you have `generate-tasks-from-prd.mdc` accessible.
+1.  Ensure you have `generate-tasks.mdc` accessible.
 2.  In Cursor's Agent chat, use the PRD to create tasks:
 
     ```
-    Now take @MyFeature-PRD.md and create tasks using @generate-tasks-from-prd.mdc
+    Now take @MyFeature-PRD.md and create tasks using @generate-tasks.mdc
     ```
     *(Note: Replace `@MyFeature-PRD.md` with the actual filename of the PRD you generated in step 1.)*
 
@@ -89,12 +89,19 @@ You'll see a satisfying list of completed items grow, providing a clear visual o
 
 While it's not always perfect, this method has proven to be a very reliable way to build out larger features with AI assistance.
 
+### 6️⃣ Build Regression Tests from Logs
+
+After merging your changes, run `qa-regression-builder.mdc` to analyze recent logs or test reports. The command searches for repeated errors or anomalies and then suggests new regression tests, updates to your QA checklist, and optional tasks for unresolved issues.
+
 ## 🗂️ Files in this Repository
 
 *   **`create-prd.mdc`**: Guides the AI in generating a Product Requirement Document for your feature.
-*   **`generate-tasks-from-prd.mdc`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
+*   **`generate-tasks.mdc`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
 *   **`process-task-list.mdc`**: Instructs the AI on how to process the generated task list, tackling one task at a time and waiting for your approval before proceeding. (This file also contains logic for the AI to mark tasks as complete).
+ codex/auto-generate-qa-summary.md-per-feature/pr
 *   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
+*   **`qa-regression-builder.mdc`**: After a merge, parse logs for repeated errors and suggest regression tests or new tasks.
+ main
 
 ## 🌟 Benefits
 
@@ -121,7 +128,28 @@ While it's not always perfect, this method has proven to be a very reliable way 
 ## QA Report Generation & Traceability
 
 Use `scripts/generate_qa_summary.py` to produce a `qa-summary.md` for each PR. Provide the task list file, QA reviewer names, test coverage results, bug information, and CI/CD log URL. Commit the generated summary for audit purposes.
+codex/auto-generate-qa-summary.md-per-feature/pr
 
+
+```bash
+python3 scripts/generate_qa_summary.py --tasks-file tasks-example.md 
+    --qa-reviewers "Alice,Bob" --test-coverage coverage.txt 
+    --bugs-fixed bugs.txt --cicd-log-url https://link.to/logs
+```
+This creates `qa-summary.md`.
+
+
+
+## 📊 Advanced Business Analysis Workflow
+
+For projects requiring deeper upfront analysis, consult the **[Advanced Business Analysis SDLC Workflow](advanced-ba-workflow.md)**. It explains how to:
+
+1. Gather thorough requirements through stakeholder interviews and clarifying questions.
+2. Propose multiple solution options with varying complexity and functionality.
+3. Break down the chosen option into a detailed design document for user review and approval.
+4. Embed QA activities in every step to achieve full functional test coverage.
+
+main
 
 ## 🤝 Contributing
 
@@ -130,6 +158,6 @@ Please feel free to:
 *   Open an issue to discuss changes or suggest new features.
 *   Submit a pull request with your enhancements.
 
----
+
 
 Happy AI-assisted developing!
