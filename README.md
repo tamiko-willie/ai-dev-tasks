@@ -84,12 +84,19 @@ You'll see a satisfying list of completed items grow, providing a clear visual o
 
 While it's not always perfect, this method has proven to be a very reliable way to build out larger features with AI assistance.
 
+### 6️⃣ Build Regression Tests from Logs
+
+After merging your changes, run `qa-regression-builder.mdc` to analyze recent logs or test reports. The command searches for repeated errors or anomalies and then suggests new regression tests, updates to your QA checklist, and optional tasks for unresolved issues.
+
 ## 🗂️ Files in this Repository
 
 *   **`create-prd.mdc`**: Guides the AI in generating a Product Requirement Document for your feature.
+codex/update-prd-with-qa-sections-and-checklist
 *   **`generate-tasks.mdc`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list with embedded QA and security subtasks.
 *   **`process-task-list.mdc`**: Instructs the AI on how to process the generated task list, tackling one task at a time and waiting for your approval before proceeding. This file also checks for QA sign-off and passing security scans before closing tasks.
 *   **`generate-qa-checklist.mdc`**: Builds a feature-specific QA checklist covering accessibility, security scans, and coverage requirements.
+*   **`qa-regression-builder.mdc`**: After a merge, parse logs for repeated errors and suggest regression tests or new tasks.
+main
 
 ## 🌟 Benefits
 
