@@ -1,9 +1,27 @@
+
+"""Utility for creating a markdown QA summary file for compliance audits."""
+
+
 import argparse
 import re
 from pathlib import Path
 
 
 def parse_tasks(path: Path):
+
+    """Parse a markdown task list.
+
+    Parameters
+    ----------
+    path : Path
+        Path to the markdown file containing a ``## Tasks`` section.
+
+    Returns
+    -------
+    list[str]
+        Formatted task strings preserving completion status.
+    """
+
     tasks = []
     if not path or not path.is_file():
         return tasks
@@ -26,12 +44,14 @@ def parse_tasks(path: Path):
 
 
 def read_text(path: Path):
+
     if path and path.is_file():
         return path.read_text().strip()
     return ""
 
 
 def generate_summary(args):
+main
     tasks = parse_tasks(args.tasks_file) if args.tasks_file else []
     coverage = read_text(args.test_coverage)
     bugs = read_text(args.bugs_fixed)
@@ -65,7 +85,9 @@ def generate_summary(args):
         lines.append(args.cicd_log_url)
         lines.append("")
 
+
     Path(args.output).write_text("\n".join(lines))
+ main
 
 
 def main():
@@ -76,6 +98,7 @@ def main():
     parser.add_argument("--bugs-fixed", type=Path, help="Path to bugs found/fixed file")
     parser.add_argument("--cicd-log-url", help="Link to CI/CD logs")
     parser.add_argument("--output", default="qa-summary.md", help="Output markdown file")
+ main
     args = parser.parse_args()
     generate_summary(args)
 
