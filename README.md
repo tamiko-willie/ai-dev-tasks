@@ -118,6 +118,15 @@ After merging your changes, run `qa-regression-builder.mdc` to analyze recent lo
 *   **Correct File Tagging:** Always ensure you're accurately tagging the PRD filename (e.g., `@MyFeature-PRD.md`) when generating tasks.
 *   **Patience and Iteration:** AI is a powerful tool, but it's not magic. Be prepared to guide, correct, and iterate. This workflow is designed to make that iteration process smoother.
 
+## 📊 Advanced Business Analysis Workflow
+
+For projects requiring deeper upfront analysis, consult the **[Advanced Business Analysis SDLC Workflow](advanced-ba-workflow.md)**. It explains how to:
+
+1. Gather thorough requirements through stakeholder interviews and clarifying questions.
+2. Propose multiple solution options with varying complexity and functionality.
+3. Break down the chosen option into a detailed design document for user review and approval.
+4. Embed QA activities in every step to achieve full functional test coverage.
+
 ## 🤝 Contributing
 
 Got ideas to improve these `.mdc` files or have new ones that fit this workflow? Contributions are welcome!
