@@ -95,17 +95,14 @@ After merging your changes, run `qa-regression-builder.mdc` to analyze recent lo
 
 ## 🗂️ Files in this Repository
 
-*   **`create-prd.mdc`**: Guides the AI in generating a Product Requirement Document for your feature.
+
+*   **`create-prd.mdc`**: Guides the AI in generating a Product Requirement Document for your feature. This command now consults `advanced-ba-workflow.md` so the AI gathers thorough requirements and presents solution options before finalizing the PRD.
 *   **`generate-tasks.mdc`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list with embedded QA and security subtasks.
 *   **`process-task-list.mdc`**: Instructs the AI on how to process the generated task list, tackling one task at a time and waiting for your approval before proceeding. This file also checks for QA sign-off and passing security scans before closing tasks.
 *   **`generate-qa-checklist.mdc`**: Builds a feature-specific QA checklist covering accessibility, security scans, and coverage requirements.
 *   **`qa-regression-builder.mdc`**: After a merge, parse logs for repeated errors and suggest regression tests or new tasks.
-
-*   **`generate-tasks.mdc`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
 *   **`process-task-list.mdc`**: Instructs the AI on how to process the generated task list, tackling one task at a time and waiting for your approval before proceeding. (This file also contains logic for the AI to mark tasks as complete).
-*   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs.
-*   **`qa-regression-builder.mdc`**: After a merge, parse logs for repeated errors and suggest regression tests or new tasks.
- 
+*   **`scripts/generate_qa_summary.py`**: Creates a `qa-summary.md` file summarizing tasks, QA reviewers, test coverage, bugs, and CI/CD logs. 
 
 ## 🌟 Benefits
 
@@ -151,6 +148,9 @@ For projects requiring deeper upfront analysis, consult the **[Advanced Business
 2. Propose multiple solution options with varying complexity and functionality.
 3. Break down the chosen option into a detailed design document for user review and approval.
 4. Embed QA activities in every step to achieve full functional test coverage.
+
+
+`create-prd.mdc` references this workflow automatically so your AI assistant follows these BA steps when gathering requirements and outlining solution choices.
 
 
 ## 🤝 Contributing
