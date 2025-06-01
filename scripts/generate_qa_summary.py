@@ -1,15 +1,12 @@
- codex/auto-generate-qa-summary.md-per-feature/pr
 
 """Utility for creating a markdown QA summary file for compliance audits."""
 
-main
 import argparse
 import re
 from pathlib import Path
 
 
 def parse_tasks(path: Path):
- codex/auto-generate-qa-summary.md-per-feature/pr
 
     """Parse a markdown task list.
 
@@ -24,7 +21,6 @@ def parse_tasks(path: Path):
         Formatted task strings preserving completion status.
     """
 
- main
     tasks = []
     if not path.is_file():
         return tasks
@@ -32,7 +28,6 @@ def parse_tasks(path: Path):
     task_pattern = re.compile(r"^\s*- \[( |x)\] \d+\.\d+ (.+)")
     with path.open() as f:
         for line in f:
- codex/auto-generate-qa-summary.md-per-feature/pr
             if line.strip().lower().startswith('## tasks'):
                 in_tasks_section = True
                 continue
@@ -52,13 +47,11 @@ def parse_tasks(path: Path):
                 m = task_pattern.match(line)
                 if m:
                     status = "Done" if m.group(1) == "x" else "Todo"
- main
                     tasks.append(f"[{status}] {m.group(2).strip()}")
     return tasks
 
 
 def read_text(path: Path):
- codex/auto-generate-qa-summary.md-per-feature/pr
     if path and path.is_file():
         return path.read_text().strip()
     return ''
@@ -76,7 +69,6 @@ def generate_summary(args):
 def generate_summary(args):
     """Create the QA summary markdown file based on CLI arguments."""
 
- main
     tasks = parse_tasks(args.tasks_file) if args.tasks_file else []
     coverage = read_text(args.test_coverage)
     bugs = read_text(args.bugs_fixed)
@@ -113,7 +105,6 @@ def generate_summary(args):
         output_lines.append(args.cicd_log_url)
         output_lines.append('')
 
- codex/auto-generate-qa-summary.md-per-feature/pr
     Path(args.output).write_text('\n'.join(output_lines))
 
 
@@ -127,7 +118,6 @@ def main():
     """Entry point for the ``generate_qa_summary.py`` command line interface."""
 
     parser = argparse.ArgumentParser(description="Generate qa-summary.md for compliance audits")
- main
     parser.add_argument('--tasks-file', type=Path, help='Path to tasks markdown file')
     parser.add_argument('--qa-reviewers', help='Comma-separated list of QA reviewer names')
     parser.add_argument('--test-coverage', type=Path, help='Path to test coverage results file')
