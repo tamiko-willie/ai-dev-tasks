@@ -1,0 +1,72 @@
+---
+description: Complete Cursor-based QA and SDLC workflow
+globs:
+alwaysApply: false
+---
+# Cursor SDLC Workflow
+
+This document outlines a multi-phase workflow for managing software projects within Cursor.
+
+## Steps
+
+1. **User Prompt Ingestion**
+   - Accept the initial user prompt describing a business or system need.
+   - Save the prompt context.
+   - Flag the task for the clarification phase.
+
+2. **Clarification Phase**
+   - Generate two to five open-ended questions to refine understanding of the problem.
+   - Ask the user iteratively until key details are clear.
+   - Summarize the answers for later reference.
+
+3. **Needs Narrowing**
+   - Parse user responses to extract goals, constraints, and priorities.
+   - Confirm the summarized objectives with the user before moving on.
+
+4. **Option Formulation**
+   - Present three solution tiers: MVP, Feature-Rich, and Comprehensive.
+   - For each option, list pros and cons, approximate timelines, and complexity.
+
+5. **User Selection & Adjustment**
+   - Let the user select a preferred solution or adjust one of the options.
+   - Update the selection and confirm the final choice with the user.
+
+6. **Design Documentation**
+   - Generate a detailed design document for the chosen option including features, architecture, user flows, and data models.
+   - Tag tasks that require review.
+
+7. **Design Review & Approval**
+   - Present a summary of the design and request user approval.
+   - Wait for explicit confirmation before continuing.
+
+8. **QA Injection per Feature**
+   - For each feature, add a QA subtask identifying risk areas and test types such as unit or integration tests.
+
+9. **Automated QA Checklist Generation**
+   - Read the PRD or tasks, determine risks, and auto-generate a QA checklist covering edge cases, accessibility, and security.
+
+10. **Test Plan Creation**
+    - Create a comprehensive test plan describing inputs, expected outputs, browser matrix, role matrix, and error handling.
+
+11. **Traceability Matrix Generation**
+    - Map requirements to test cases with unique IDs to ensure full coverage.
+
+12. **Test Result Accumulation**
+    - Store results from each test run without overwriting previous data.
+    - Append outcomes to a history log or dashboard.
+
+13. **WCAG Compliance Testing**
+    - Run automated accessibility tools (axe, Lighthouse) and document any violations.
+
+14. **Compliance Certification**
+    - Compile results into a certificate confirming standards compliance with dates and tools used.
+
+15. **AI Behavior Configuration**
+    - Configure Cursor to respect QA status labels such as `qa-blocked` and `qa-approved` for gated progression.
+
+16. **CI/CD Enforcement Hook**
+    - Connect QA output files to CI jobs and block builds or merges when quality gates fail.
+
+17. **Automated Regression Test Expansion**
+    - After each run, analyze logs to suggest new regression test cases and append them to the test suite.
+
