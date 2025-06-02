@@ -121,6 +121,13 @@ This platform is WCAG 2.2 AA compliant, featuring:
 - ARIA attributes
 - Semantic HTML
 
+## Workflows
+
+Detailed project workflows are documented in:
+
+- `advanced-ba-workflow.md` – business analysis process
+- `cursor-workflow.mdc` – end-to-end Cursor workflow covering prompt intake, design, QA, and CI integration
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
