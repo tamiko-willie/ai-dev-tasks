@@ -11,16 +11,16 @@ We are currently rebuilding the project after some files were accidentally delet
 - [x] package.json
 - [x] tsconfig.json
 - [x] next.config.js
-- [ ] pages/_app.tsx
-- [ ] pages/index.tsx
-- [ ] pages/employer/register.tsx
-- [ ] pages/employer/dashboard.tsx
-- [ ] pages/candidate/interview/[id].tsx
-- [ ] pages/api/interviews/create.ts
-- [ ] pages/api/interviews/submit-recording.ts
-- [ ] styles/theme.ts
-- [ ] lib/createEmotionCache.ts
-- [ ] types/global.d.ts
+- [x] pages/_app.tsx
+- [x] pages/index.tsx
+- [x] pages/employer/register.tsx
+- [x] pages/employer/dashboard.tsx
+- [x] pages/candidate/interview/[id].tsx
+- [x] pages/api/interviews/create.ts
+- [x] pages/api/interviews/submit-recording.ts
+- [x] styles/theme.ts
+- [x] lib/createEmotionCache.ts
+- [x] types/global.d.ts
 
 ## Features
 
