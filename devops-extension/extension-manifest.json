@@ -1,0 +1,18 @@
+{
+  "manifestVersion": 1,
+  "id": "devops-user-lookup-extension",
+  "name": "DevOps User Lookup",
+  "publisher": "ai-dev",
+  "version": "0.1.0",
+  "contributions": [
+    {
+      "id": "userLookupControl",
+      "type": "ms.vss-web.control",
+      "targets": ["ms.vss-work-web.work-item-form"],
+      "properties": {
+        "name": "User Lookup Control",
+        "uri": "dist/index.html"
+      }
+    }
+  ]
+}
