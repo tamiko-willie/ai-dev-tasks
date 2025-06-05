@@ -40,32 +40,40 @@ The generated TDD should include the following sections:
     * Purpose of this document: to detail the technical design for implementation.
 2.  **PRD Reference:**
     * Filename of the PRD this TDD is based on (e.g., `prd-[feature-name].md`).
-3.  **Technical Overview & Architecture:**
+3.  **Technical Goals:**
+    * A bulleted list of specific, measurable technical objectives for the implementation (e.g., "Achieve API response times under 250ms," "Ensure data schema is extensible for future role management").
+4.  **Technical Overview & Architecture:**
     * High-level description of the proposed technical solution.
     * Key architectural decisions (e.g., choice of patterns, frameworks, major components).
     * **Alignment with PRD Constraints:** Explicitly addresses how the proposed architecture meets any technical or platform requirements mentioned in the PRD (e.g., justifying a PWA approach for a "mobile app" requirement).
-4.  **Data Model Design:**
+5.  **Data Model Design:**
     * **Field Definitions:** Details of new or modified database schemas, tables, fields, and relationships.
     * **Data Lifecycle & Integrity:** Description of how data is handled during key events like creation, updates, and deletion (e.g., cascade deletes, handling of orphaned records and shared data upon account deletion).
     * **Handling of Complex Logic:** Plan for modeling complex data scenarios mentioned in the PRD, such as recurring patterns with exceptions, or derived data fields (e.g., how a task progress indicator will be calculated and stored/retrieved).
     * Data validation rules and data migration strategy, if applicable.
-5.  **API Design (if applicable):**
-    * List of new or modified API endpoints.
-    * For each endpoint:
-        * Method (GET, POST, PUT, DELETE, etc.).
-        * Path.
-        * Request parameters/body schema.
-        * Response body schema (including error responses).
-        * Authentication and authorization requirements.
-6.  **Module/Component Breakdown:**
-    * Identification of key new or significantly modified software modules, classes, or components.
-    * Responsibilities of each component.
-    * Interactions between components.
-7.  **Technical Risks & Mitigation Plan:**
+6.  **API Design (if applicable):**
+    * List of new or modified API endpoints. For each endpoint, detail its method, path, request/response formats, and authentication/authorization needs.
+7.  **Module/Component Breakdown:**
+    * Identification of key new or significantly modified software modules, classes, or components and their responsibilities.
+8.  **Error Handling & Logging Strategy:**
+    * Plan for managing and reporting errors (e.g., API error codes, user-facing error messages).
+    * Strategy for logging important events, errors, and metrics for debugging and monitoring.
+9.  **Security Considerations:**
+    * Specific security measures to be implemented (e.g., input validation, output encoding, access controls, data encryption).
+10. **Performance & Scalability Considerations:**
+    * Design choices made to meet performance or scalability requirements.
+    * Expected load, data volumes, and how the design supports future growth.
+11. **Testing Strategy:**
+    * Outline of the testing approach (e.g., key areas for unit tests, integration test points, E2E testing considerations) to ensure the design is testable.
+12. **Deployment Considerations (Optional):**
+    * Any special steps or considerations for deploying this feature (e.g., environment variable changes, infrastructure adjustments, rollout plan).
+13. **Technical Risks & Mitigation Plan:**
     * Identified potential technical challenges, unknowns, or dependencies.
     * **Inconsistencies:** Notes any inconsistencies between PRD technical suggestions (e.g., "relational database") and the proposed TDD architecture, with a justification for the chosen path.
     * Proposed strategies to mitigate these risks.
-8.  **Open Technical Questions:**
+14. **Out of Scope (Technical Non-Goals):**
+    * Clearly lists technical functionalities or approaches that are intentionally *not* part of this design to manage scope.
+15. **Open Technical Questions:**
     * List any remaining technical questions or areas needing further investigation or decisions.
 
 ## Target Audience
