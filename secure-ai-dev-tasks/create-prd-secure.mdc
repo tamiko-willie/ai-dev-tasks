@@ -1,3 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
 # Rule: Generating a Security-Focused Product Requirements Document (PRD)
 
 ## Goal
@@ -114,7 +119,12 @@ The generated PRD should include the following sections:
     - Code review security checklist
     - Deployment security controls
 
-16. **Open Questions & Dependencies:**
+16. **Documentation Requirements:**
+    - Updates to project `README.md` with feature summary and usage.
+    - Detailed Confluence page from `docs/wiki/confluence.md`.
+    - All security documentation (`threat-model.md`, `security-controls.md`, etc.).
+
+17. **Open Questions & Dependencies:**
     - Remaining security questions
     - External dependencies and their security posture
     - Risk mitigation strategies needed
