@@ -1,3 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Security-Enhanced Task List Management
+
+Guidelines for managing security-focused task lists in markdown files to track progress on completing a PRD while ensuring comprehensive security validation at each step.
+
+## Security-First Task Implementation Protocol
 # Security-Enhanced Task List Management
 
 Guidelines for managing security-focused task lists in markdown files to track progress on completing a PRD while ensuring comprehensive security validation at each step.
@@ -139,9 +149,11 @@ For each completed task, validate:
 - [ ] Performance impact of security controls measured
 
 ### **Documentation Security:**
-- [ ] Security implementation documented
-- [ ] Threat model updated
-- [ ] Compliance requirements validated
+- [ ] Security implementation documented in `docs/security/security-controls.md`
+- [ ] Threat model updated in `docs/security/threat-model.md`
+- [ ] Project `README.md` updated with feature overview and usage
+- [ ] Confluence page drafted in `docs/wiki/confluence.md`
+- [ ] Compliance requirements validated and documented
 - [ ] Security review evidence collected
 - [ ] User security guidance updated (if applicable)
 

@@ -1,3 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Rule: Generating a Security-Focused Task List from a PRD
+
+## Goal
+
+To guide an AI assistant in creating a detailed, step-by-step task list with integrated security considerations in Markdown format based on an existing Product Requirements Document (PRD). The task list should guide a developer through secure implementation while ensuring all security requirements, compliance needs, and risk mitigations are properly addressed.
 # Rule: Generating a Security-Focused Task List from a PRD
 
 ## Goal
@@ -105,6 +115,10 @@ The generated task list _must_ follow this structure:
 - `docs/security/incident-response.md` - Incident response procedures
 - `docs/compliance/privacy-assessment.md` - Privacy impact assessment
 
+### **Project Documentation**
+- `docs/wiki/confluence.md` - Detailed documentation for Confluence wiki page.
+- `README.md` - Updates to the project README file for this feature.
+
 ### **Monitoring & Operations**
 - `monitoring/security-alerts.yml` - Security monitoring configuration
 - `logging/security-events.ts` - Security event logging setup
@@ -173,7 +187,11 @@ The generated task list _must_ follow this structure:
   - [ ] 8.3 [Set up security monitoring in production]
   - [ ] 8.4 [Conduct pre-production security validation]
   - [ ] 8.5 [Create rollback and incident response procedures]
-```
+
+- [ ] 9.0 **Project Documentation**
+  - [ ] 9.1 [Draft updates for the project README.md file with feature summary and usage]
+  - [ ] 9.2 [Create detailed Confluence page documentation in `docs/wiki/confluence.md`]
+  - [ ] 9.3 [Review and finalize all project and security documentation]
 
 ## Security Task Templates
 
@@ -237,6 +255,8 @@ Each task list must include creation of:
 - **Incident Response Procedures**
 - **Security Operations Runbook**
 - **Compliance Validation Report**
+- **Confluence Page** (`docs/wiki/confluence.md`)
+- **README.md Updates**
 
 ## Security Validation Criteria
 
