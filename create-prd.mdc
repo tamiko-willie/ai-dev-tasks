@@ -61,3 +61,4 @@ Assume the primary reader of the PRD is a **junior developer**. Therefore, requi
 3. Take the user's answers to the clarifying questions and improve the PRD
 4. Make no recommendation until you are 95% certain you are correct. Ask clarifying questions to improve certainty.
 5. Look to solve root problems instead of quick fixes that only address surface symptoms.
+6. Ensure typing is appropriately inferable.
